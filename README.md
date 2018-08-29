@@ -70,3 +70,4 @@ Branch naming convention:
 
 2. Create a pull request to this repository.
 3. Directory structure is up to you.
+4. Use your most comfortable Programming and Query language.
