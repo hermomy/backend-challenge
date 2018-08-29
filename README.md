@@ -52,9 +52,9 @@ She would like to know the answer to these questions:
 
 The scenarios above are inter-related. Based on your understanding of the scenarios, please answer the following:
 
-1 - What will your approach be in designing the database?
-2 - Write a function to process the vouchers based on the given conditions.
-3 - Write the query to answer Junaidah's questions.
+1. What will your approach be in designing the database?
+2. Write a function to process the vouchers based on the given conditions.
+3. Write the query to answer Junaidah's questions.
 
 ### How To Submit Answer:
 
