@@ -15,9 +15,9 @@ Read the scenarios carefully, and craft your approach accordingly. We will evalu
 A stock of items with 3 different SKUs arrived at the warehouse. Each SKUs is 100 in quantity.
 A member of the Fulfilment Team, Kumar will do the following:
 
-1 - He will count the items to make sure the quantity tally with Purchase Order
-2 - He registers the items by barcode scanning
-3 - Each items are stored by category, with location tagging
+1. He will count the items to make sure the quantity tally with Purchase Order
+2. He registers the items by barcode scanning
+3. Each items are stored by category, with location tagging
 
 
 ## Scenario 2
