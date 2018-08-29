@@ -61,9 +61,8 @@ The scenarios above are inter-related. Based on your understanding of the scenar
 
 ### How To Submit Answer:
 
-#### Fork this repo
-
-1. Create a new branch in your repo
+1. Fork this repo
+2. Create a new branch
 
 ```php
 Branch naming convention:
@@ -71,9 +70,9 @@ Branch naming convention:
 // For example a guy named John Smith would name it like JS-011218-developer-test
 ```
 
-2. Create a pull request to this repository.
-3. Directory structure is up to you.
-4. Use your most comfortable Programming and Query language.
+3. Create a pull request to this repository.
+4. Directory structure is up to you.
+5. Use your most comfortable Programming and Query language.
 
 #### Timekeeping with Git Commits
 
