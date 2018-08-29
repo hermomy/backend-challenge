@@ -8,6 +8,9 @@ Read the scenarios carefully, and craft your approach accordingly. We will evalu
 - Proper use of version control, in this case, Git
 - The time you take to complete (based on commit history)
 
+It is recommended to complete this test within 8-working-hours, meaning you can stretch this to 3 days with 8 hours working time.
+**The maximum you can stretch is 5 days.**
+
 ---
 
 ## Scenario 1
@@ -15,9 +18,9 @@ Read the scenarios carefully, and craft your approach accordingly. We will evalu
 A stock of items with 3 different SKUs arrived at the warehouse. Each SKUs is 100 in quantity.
 A member of the Fulfilment Team, Kumar will do the following:
 
-1. He will count the items to make sure the quantity tally with Purchase Order
-2. He registers the items by barcode scanning
-3. Each items are stored by category, with location tagging
+- He will count the items to make sure the quantity tally with Purchase Order
+- He registers the items by barcode scanning
+- Each items are stored by category, with location tagging
 
 
 ## Scenario 2
