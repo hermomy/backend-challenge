@@ -33,7 +33,7 @@ The voucher condition is as below:
 
 - 20% Discount voucher
 - Voucher code: 20FORME
-- Will expire 12 December 2018
+- Will expire in one month from today
 - Minimum purchase of RM100
 
 Amy then checks out, fulfilling the voucher's conditions.
@@ -43,10 +43,10 @@ Amy then checks out, fulfilling the voucher's conditions.
 Junaidah the Analyst, would like to see some report based on the activity in **Scenario 1, 2, 3**
 She would like to know the answer to these questions:
 
-- The number of unpaid orders vs paid
-- The cost incurred to generate sales
-- Average cart size
-- Average weekly sales
+- The number of unpaid orders vs paid in a month
+- The cost incurred to generate weekly sales
+- Average daily sales
+- The inventory movement based on Paid Orders and Unpaid Orders
 
 ---
 
@@ -65,7 +65,7 @@ The scenarios above are inter-related. Based on your understanding of the scenar
 ```php
 Branch naming convention:
 [your_initial]-[start_date DDMMYY]-[developer-test]
-// For example a guy named John Smith would name it like JS-developer-test
+// For example a guy named John Smith would name it like JS-011218-developer-test
 ```
 
 2. Create a pull request to this repository.
