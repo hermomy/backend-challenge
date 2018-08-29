@@ -71,3 +71,9 @@ Branch naming convention:
 2. Create a pull request to this repository.
 3. Directory structure is up to you.
 4. Use your most comfortable Programming and Query language.
+
+#### Timekeeping with Git Commits
+
+- Whenever you want to start, please commit with the caps message "START"
+- If you want to take a break, please commit with the caps message "BREAK"
+- If you want to stop for the day, please commit with the caps message "END"
