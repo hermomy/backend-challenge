@@ -1,15 +1,12 @@
 # Hermo Developer Test
 
-Please show your approach on the questions below and commit the result in a branch with this rules:
-- Naming convention: [your_initial]-[developer-test]; for example a guy named John Smith would name it like JS-developer-test
-- Method: Create a pull request to this repository
-
 Read the scenarios carefully, and craft your approach accordingly. We will evaluate based on these points:
 
 - Databases
 - Programming Logic
 - Solution of approach
 - Proper use of version control, in this case, Git
+- The time you take to complete (based on commit history)
 
 ---
 
@@ -58,3 +55,18 @@ The scenarios above are inter-related. Based on your understanding of the scenar
 1 - What will your approach be in designing the database?
 2 - Write a function to process the vouchers based on the given conditions.
 3 - Write the query to answer Junaidah's questions.
+
+### How To Submit Answer:
+
+#### Fork this repo
+
+1. Create a new branch in your repo
+
+```php
+Branch naming convention:
+[your_initial]-[start_date DDMMYY]-[developer-test]
+// For example a guy named John Smith would name it like JS-developer-test
+```
+
+2. Create a pull request to this repository.
+3. Directory structure is up to you.
