@@ -9,7 +9,7 @@ Read the scenarios carefully, and craft your approach accordingly. We will evalu
 - The time you take to complete (based on commit history)
 
 It is recommended to complete this test within 8-working-hours, meaning you can stretch this to 3 days with 8 hours working time.
-**The maximum you can stretch is 5 days.**
+**The maximum you can stretch is 5 days.** Please read the [Timekeeping Instructions](#timekeeping-with-git-commits)
 
 ---
 
@@ -25,7 +25,7 @@ A member of the Fulfilment Team, Kumar will do the following:
 
 ## Scenario 2
 
-A member of the Procurement Team, Angela, was notified about **Scenario 1**.
+A member of the Procurement Team, Angela, was notified about [**Scenario 1**.](#scenario-1)
 She registers the inventory into products to sell in the website with the flag ON_SALE.
 Angela also uploaded a few images for the products and setup the other information like name, price, and cost.
 
