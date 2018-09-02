@@ -142,5 +142,5 @@ CREATE TABLE `customers` (
   `customer_ip` varchar(255),
   `customer_confirm_code` text(65535),
   PRIMARY KEY (`customer_id`)
-);
+);.
 
