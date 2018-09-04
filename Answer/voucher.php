@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 /* Assumption 
 1. salesOrder model will become parameter
-
+This logic should reside on bill or cart model then get voucher data by modal relation
 */
 
 function applyVoucher(SalesOrder $salesOrder){
