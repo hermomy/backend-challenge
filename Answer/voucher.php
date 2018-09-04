@@ -1,6 +1,6 @@
 <?php
 
-//resume
+//end
 use App\SalesOrder;
 use DB;
 use Carbon\Carbon;
