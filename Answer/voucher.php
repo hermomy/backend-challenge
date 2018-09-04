@@ -1,6 +1,6 @@
 <?php
 
-//break
+//resume
 use App\SalesOrder;
 use DB;
 use Carbon\Carbon;
@@ -32,7 +32,7 @@ function applyVoucher(SalesOrder $salesOrder){
                 );
 
             $salesOrder->discount_amount= calculateVoucherDiscount($salesOrder,$voucher);
-            $salesOrder->recaculate(); //assume salesOrder model having function to update other column like total & tax
+            $salesOrder->recalculate(); //assume salesOrder model having function to update other column like total & tax
             $salesOrder->save();
             //maybe need to include salesOrder filtered to frontend to update or simply redirect.
               return response(
