@@ -1,4 +1,4 @@
-# Hermo Developer Test
+# Hermo Backend Challenge
 
 Read the scenarios carefully, and craft your approach accordingly. We will evaluate based on these points:
 
