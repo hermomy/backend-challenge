@@ -8,6 +8,11 @@
 		<script type="text/javascript">
 		    $( document ).ready(function() {
 		    	$('.btnCheckout').click( function(){
+		    		$('#input_subtotal').val($(this).val());
+		    		$('#input_v_code').val('');
+		    		$('#error').html('');
+		    		$('#s_voucher_val').html('');
+		    		$('#s_voucher_amt').html('');
 		    		$('#s_subtotal').html('RM '+$(this).val());
 		    		$('#s_voucher_ttl').html('RM '+$(this).val());
 		    		$('#summary').show();
@@ -16,11 +21,12 @@
 		    		e.preventDefault();
 		    		$.ajax({
 		    		    type:'POST',
-		    		    url:'voucher.php',
+		    		    url:'check_voucher.php',
 		    		    data:$(this).serialize(),
 		    		    dataType:'json',
 		    		    success: function(data){
 		    		    	if(data['type'] == 'success'){
+					    		$('#error').html('');
 		    		    		$('#s_voucher_val').html(data['value']);
 		    		    		$('#s_voucher_amt').html(data['amount']);
 		    		    		$('#s_voucher_ttl').html(data['total']);
@@ -39,7 +45,8 @@
 
 	<body>
 		<div class="row">
-		    <div class="col-md-9">
+		    <div class="col-md-1"></div>
+		    <div class="col-md-7">
 		    	<div class="row">
 		    		<div class="col-md-9">
 			    			<p><label>Click on button below to simulate purchase checkout =)<br/>
@@ -49,22 +56,19 @@
 			    	</div>
 		    	</div>
 		    	<br/><br/><br/><br/>
-		    	<p><label>Then... insert voucher code and click "USE" ! **psst.. try 20FORME</label></p>
+		    	<p><label>Then... insert voucher code and click USE !! **psst.. try 20FORME</label></p>
 		    	<form id="voucher_form" name="voucher_form" class="voucher_form" action="#" method="post">
 		    		<div class="row">
-		    			<div class="col-md-1">
-		    				<label for="v_code">VOUCHER</label>
+		    			<div class="col-md-4">
+		    				<input id="input_subtotal" name="subtotal" type="hidden" value="" />
+		    				<input id="input_v_code" name="v_code" type="text" size="25" maxlength="20" placeholder="Voucher/Promotional code" required/>
 		    			</div>
 		    			<div class="col-md-3">
-		    				<input name="v_code" type="text" required size="25" maxlength="20" placeholder="Voucher/Promotional code" />
-		    			</div>
-		    			<div class="col-md-5">
 		    				<input type="submit" value="USE" />
 		    			</div>
 		    		</div>
 	    			<div class="row">
-		    			<div class="col-md-1"></div>
-		    			<div class="col-md-8">
+		    			<div class="col-md-7">
 		    				<div id="error" class="error"></div>
 		    			</div>
 	    			</div>
@@ -93,6 +97,7 @@
 		    		<hr/>
 		    	</div>
 		    </div>
+		    <div class="col-md-1"></div>
 		</div>
 	</body>
 
