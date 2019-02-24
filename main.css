@@ -12,4 +12,37 @@
 		font-size: 10px;
 		color: red;
 	}
+	.voucher_form input{
+		border: 1px solid #dfdfdf;
+		padding: 8px;
+		box-sizing: border-box;
+		height: 45px;
+		border-radius: 2px;
+		font-size: 15px;
+		color: #55595c;
+	}
+	.voucher_form input[type=submit]{
+		border: 1px solid #603;
+		padding: 0px 50px 0px 50px;
+		box-sizing: border-box;
+		height: 45px;
+		border-radius: 2px;
+		font-size: 13px;
+		color: white;
+		background-color: #603;
+	}
+	.error{
+		color: red;
+		font-size: 11px;
+	}
+	.summary{
+		border: 1px solid grey;
+		box-sizing: border-box;
+		padding: 10px;
+		margin: 10px;
+		width: 80%;
+		min-height: 200px;
+		border-radius: 5px;
+		font-size: 12px;
+	}
 </style>
