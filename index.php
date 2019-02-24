@@ -26,13 +26,17 @@
 		    	Example B : Order shipped out, inventory qty minus<br/>
 		    	Example C : Order returned, inventory qty added</div></p>
 		    	<p><label>Product</label> - Procurement team create product details here</p>
-		    	<p><label>Order</label> - <div>After user checkout for payment, record subtotal and total(after charges/discount)<br/>
+		    	<p><label>Order</label> - <div>User checkout for payment, record subtotal and total(after charges/discount)<br/>
 		    	Status updated by stages (Pending Payment/Processing/Shipping/Received/Reviewed/Refunded...etc)</div></p>
 		    	<p><label>Order Item</label> - What item consist in certain order, item price on this order(for cases like promotion price)</p>
 		    	<p><label>Order Charges</label> - What other charges/discount for certain order (voucher/tax/shipping fee...etc)</p>
 		    	<p><label>Voucher</label> - Set setting for each voucher code.</p>
+		    	<p>P.S.</p>
+		    	<p>There are much other table has to be created (shipping/payment/refund/..etc) but since not used in the scenarios so I'll leaved that part</p>
 		    	<hr/>
 		    	<h3>Write a function to process the vouchers based on the given conditions.</h3>
+		    	<button class="btn btn-info"><a href="voucher" target="_blank">Try Voucher !</a></button>
+
 		    </div>
 		    <div class="col-md-1"></div>
 		</div>
