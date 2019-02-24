@@ -43,7 +43,7 @@
 		    	<div class="row">
 		    		<div class="col-md-9">
 			    			<p><label>Click on button below to simulate purchase checkout =)<br/>
-			    			Checkout Summary will show on your left!</label></p>
+			    			Checkout Summary will show on your right!</label></p>
 			    			<button value="999.00" class="btnCheckout btn btn-info">Order RM 999</button>
 			    			<button value="99.00" class="btnCheckout btn btn-danger">Order RM 99</button>
 			    	</div>
