@@ -18,8 +18,9 @@ if ($result && $result->num_rows > 0) {
 		}else{
 			$return['type'] = 'success';
 	        $return['value'] = 'DISCOUNT '.$row['percentage'].'%';
-	        $return['amount'] = 'RM '.number_format( $input['subtotal'] * ($row['percentage'] / 100), 2);
-	        $return['total'] = 'RM '.number_format( $input['subtotal'] + $return['amount'], 2);
+	        $discount = $input['subtotal'] * ($row['percentage'] / 100);
+	        $return['amount'] = 'RM '.number_format( $discount, 2);
+	        $return['total'] = 'RM '.number_format( $input['subtotal'] - $discount, 2);
 		}		
 	}	
 } else {
