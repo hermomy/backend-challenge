@@ -5,11 +5,6 @@ Read the scenarios carefully, and craft your approach accordingly. We will evalu
 - Databases
 - Programming Logic
 - Solution of approach
-- Proper use of version control, in this case, Git
-- The time you take to complete (based on commit history)
-
-It is recommended to complete this test within 8-working-hours, meaning you can stretch this to 3 days with 8 hours working time.
-**The maximum you can stretch is 5 days.** Please read the [Timekeeping Instructions](#timekeeping-with-git-commits)
 
 ---
 
@@ -63,19 +58,4 @@ The scenarios above are inter-related. Based on your understanding of the scenar
 
 1. Fork this repo
 2. Create a new branch
-
-```php
-Branch naming convention:
-[your_initial]-[start_date DDMMYY]-[developer-test]
-// For example a guy named John Smith would name it like JS-011218-developer-test
-```
-
-3. Create a pull request to this repository.
-4. Directory structure is up to you.
-5. Use your most comfortable Programming and Query language.
-
-#### Timekeeping with Git Commits
-
-- Whenever you want to start, please commit with the caps message "START"
-- If you want to take a break, please commit with the caps message "BREAK"
-- If you want to stop for the day, please commit with the caps message "END"
+3. Create a pull request to this repository with your solution.
