@@ -21,9 +21,7 @@ The following assumption were made during the database design:-
 
 ### Write a function to process the vouchers based on the given conditions.
 
-
-
-
+Run php artisan process:vouchers
 
 
 ### Write the query to answer Junaidah's questions.
