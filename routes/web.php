@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'HermoBackendController@index')->name('login');
+Route::post('/login_process', 'HermoBackendController@login_process')->name('login_process');
  

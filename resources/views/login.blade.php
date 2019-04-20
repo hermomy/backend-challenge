@@ -1,7 +1,10 @@
+
+
   <div class="container">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
+      <br>
 
       <div class="col-xl-10 col-lg-12 col-md-9">
 
@@ -9,23 +12,28 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
+              <div class="col-lg-12">
+               @include('flash-message')
+             </div>
+             <br>
+            </div>
+            <div class="row">
               <div class="col-lg-3 d-none d-lg-block"></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Login</h1>
                   </div>
-                  <form class="user">
+                   <form name="login" method="post" action="{{URL::route('login_process')}}" >
+                     {{ csrf_field() }}
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="name" class="form-control form-control-user" id="name" aria-describedby="emailHelp" placeholder="Enter Username...">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                     </div>
-              
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a>
+                    <!-- <input type="submit" name="Login" class="btn btn-primary btn-user btn-block"> -->
+                      <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                  
                   
                   </form>
