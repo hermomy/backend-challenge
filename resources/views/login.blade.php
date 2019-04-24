@@ -1,4 +1,4 @@
-
+<body class="bg-gradient-primary">
 
   <div class="container">
 
@@ -27,10 +27,10 @@
                    <form name="login" method="post" action="{{URL::route('login_process')}}" >
                      {{ csrf_field() }}
                     <div class="form-group">
-                      <input type="name" class="form-control form-control-user" id="name" aria-describedby="emailHelp" placeholder="Enter Username...">
+                      <input type="name" class="form-control form-control-user" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Username...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password">
                     </div>
                     <!-- <input type="submit" name="Login" class="btn btn-primary btn-user btn-block"> -->
                       <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
