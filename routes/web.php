@@ -22,3 +22,7 @@ Route::post('/update_purchase_order','HermoBackendController@update_purchase_ord
 Route::post('/update_quantity_items','HermoBackendController@update_quantity_items')->name('update_quantity_items');
 Route::get('/list_items', 'HermoBackendController@list_items')->name('list_items');
 Route::post('/add_register_locationtagging','HermoBackendController@add_register_locationtagging')->name('add_register_locationtagging');
+Route::get('/list_inventory', 'HermoBackendController@list_inventory')->name('list_inventory');		
+Route::post('/add_products','HermoBackendController@add_products')->name('add_products');
+Route::get('/list_products', 'HermoBackendController@list_products')->name('list_products');	
+

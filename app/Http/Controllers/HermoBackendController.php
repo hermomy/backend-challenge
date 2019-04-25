@@ -17,6 +17,7 @@ use Session;
  use App\Models\PurchaseOrder;
  use App\Models\Items;
  use App\Models\Inventory;
+ use App\Models\Products;
 // use App\Models\Brand;
 // use App\Models\OrderDetails;
 
@@ -275,6 +276,60 @@ class HermoBackendController extends Controller
     return redirect()->route('list_items')
     ->with('success','Your Item Already Register');
    
+
+  }
+
+  public function list_inventory(){
+
+
+     $namesessions = Session::get('name');
+     $status_inventory = "Register Inventory";
+     $sqlinventory = DB::table('inventory')
+    ->join('stock_items', 'stock_items.id', '=', 'inventory.stock_items_id')
+    ->join('items','items.id','=','inventory.items_id')
+    ->select('inventory.*', 'stock_items.name', 'stock_items.description' , 'stock_items.category','stock_items.price','stock_items.skus')
+    ->where('items.status_inventory' , $status_inventory)
+    ->get();
+
+       return \View::make('master_template')
+      ->nest('content','list_inventory',array('listinventory' => $sqlinventory,'namesessions' => $namesessions));
+  }
+
+  public function add_products(){
+
+
+    $statusproduct = "Register Product";
+    $inventory_id = Input::get('inventory_id');
+    $products         = new Products;
+
+    $image = Input::file('picture_one');
+    $image1 = Input::file('picture_two');
+    $name = str_slug(Input::get('name_on_website')).'_one.'.$image->getClientOriginalExtension();
+    $name1 = str_slug(Input::get('name_on_website')).'_two.'.$image1->getClientOriginalExtension();
+    $destinationPath = public_path('/uploads/products');
+    $imagePath = $destinationPath. "/".  $name;
+    $imagePath1 = $destinationPath. "/".  $name1;
+    $image->move($destinationPath, $name);
+    $image1->move($destinationPath, $name1);
+    $products->picture_one = $name;
+    $products->picture_two = $name1;
+    $products->name_on_website = Input::get('name_on_website');
+    $products->price = Input::get('price');
+    $products->cost = Input::get('cost');
+    $products->quantity = Input::get('quantity');
+    $products->cost = Input::get('cost');
+    $products->status = Input::get('status');
+    $products->cost_description = Input::get('cost_description');
+    $products->inventory_id = $inventory_id;
+
+    $products->save();
+
+     $updatestatusproduct = DB::table('inventory')
+     ->where('id', $inventory_id)
+     ->update(['status_product' => $statusproduct ]);
+
+    return redirect()->route('list_inventory')
+    ->with('success','Your Inventory has been register to Products,Please check in menu products');
 
   }
 }

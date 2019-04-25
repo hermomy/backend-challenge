@@ -71,6 +71,18 @@
     $('#RegisterInventory').modal('show');
 });
 
+    $(document).on("click", ".open-registerProductDialog", function () {
+      var inventory_id = $(this).data('inventoryid');
+     
+
+      $(".modal-body #inventory_id").val( inventory_id );
+    
+      
+    $('#registerProductDialog').modal('show');
+});
+
+   
+
 </script>
 </body>
 
