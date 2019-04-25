@@ -26,3 +26,9 @@ Route::get('/list_inventory', 'HermoBackendController@list_inventory')->name('li
 Route::post('/add_products','HermoBackendController@add_products')->name('add_products');
 Route::get('/list_products', 'HermoBackendController@list_products')->name('list_products');	
 
+Route::get('/home', 'LandingController@index')->name('home');
+Route::post('/checkout', 'LandingController@checkout')->name('checkout');
+Route::post('/checkout_process', 'LandingController@checkout_process')->name('checkout_process');
+Route::get('/summary_checkout/{id}', 'LandingController@summary_checkout')->name('summary_checkout');
+
+

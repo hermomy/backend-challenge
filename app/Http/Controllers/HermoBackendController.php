@@ -332,5 +332,9 @@ class HermoBackendController extends Controller
     ->with('success','Your Inventory has been register to Products,Please check in menu products');
 
   }
+
+  public function list_products(){
+    
+  }
 }
 

@@ -1,0 +1,1 @@
+public/assets/js/pages/datatables_advanced.js
