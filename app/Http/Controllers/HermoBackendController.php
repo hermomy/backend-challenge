@@ -64,7 +64,7 @@ class HermoBackendController extends Controller
   public function mainpage(){
 
 
-  $namesessions = Session::get('name');
+    $namesessions = Session::get('name');
    if (Session::has('name'))
    {  
 
@@ -335,6 +335,11 @@ class HermoBackendController extends Controller
 
   public function list_products(){
     
+  }
+
+  public function logout_backend(){
+      Session::flush();
+      return redirect('/');
   }
 }
 

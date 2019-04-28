@@ -30,5 +30,7 @@ Route::get('/home', 'LandingController@index')->name('home');
 Route::post('/checkout', 'LandingController@checkout')->name('checkout');
 Route::post('/checkout_process', 'LandingController@checkout_process')->name('checkout_process');
 Route::get('/summary_checkout/{id}', 'LandingController@summary_checkout')->name('summary_checkout');
-
+Route::get('/login', 'LandingController@login')->name('login_frontend');
+Route::post('/login_process_frontend', 'LandingController@login_process_frontend')->name('login_process_frontend');
+Route::get('/logout_backend', 'HermoBackendController@logout_backend')->name('logout_backend');
 

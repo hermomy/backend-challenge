@@ -1,9 +1,15 @@
             <div class="pg-opt">
               <div class="container">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <h2>Step 1</h2>
                   </div>
+                   <div class="col-md-2">
+                 <a href="{{URL::route('home')}}" class="btn btn-primary ">HOME</a>
+            </div>
+             <div class="col-md-2">
+                 <a href="{{URL::route('login')}}" class="btn btn-primary ">Staff Login</a>
+            </div>
                 </div>
               </div>
             </div>
@@ -15,9 +21,11 @@
 
                       <div class="row">
                         <!-- Product list -->
-                        <form method="post" action="{{URL::route('checkout')}}" method="post">
-                         {{ csrf_field() }}
+                      
                          @foreach($sql as $k)
+                           <form method="post" action="{{URL::route('checkout')}}" method="post">
+                            
+                         {{ csrf_field() }}
                          <div class="col-md-3">
                           <div class="wp-block product">
                             <figure>
@@ -54,8 +62,9 @@
                         </div>
                       </div>
                     </div>
+                              </form>
                     @endforeach
-                  </form>
+        
                 </div>
               </div>
             </div>

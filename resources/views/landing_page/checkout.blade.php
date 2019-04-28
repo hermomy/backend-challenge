@@ -3,8 +3,15 @@
 <div class="pg-opt">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h2>Step 2</h2>
+
+            </div>
+             <div class="col-md-2">
+                 <a href="{{URL::route('home')}}" class="btn btn-primary ">HOME</a>
+            </div>
+             <div class="col-md-2">
+                 <a href="{{URL::route('home')}}" class="btn btn-primary ">Staff Login</a>
             </div>
         </div>
     </div>
@@ -17,7 +24,7 @@
                 {{ csrf_field() }}
 
                 <input type="hidden" name="idproduct" value="{{$sql->id}}">
-                <input type="hidden" name="productcode" value="{{$sql->product_code}}">
+            
                 <input type="hidden" name="quantity" value="{{$quantity}}">
                 <input type="hidden" name="totalprice" value="{{$total_price}}">
 
@@ -28,22 +35,17 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="{{$sql->image}}">
+                                           <img alt="" src="/uploads/products/{{ $sql->picture_one }}">
                                     </div>
                                     <div class="col-md-6">
+                                            
                                         <p>
-                                            Brand : <b>{{$sql->name_brand}}</b>
+                                            Name : <b>{{$sql->name_on_website}}</b>
                                         </p>
                                         <p>
-                                            Name : <b>{{$sql->name}}</b>
+                                            Price : <b> RM{{$sql->price}}</b>
                                         </p>
-                                        <p>
-                                            Selling Price : <b> RM{{$sql->selling_price}}</b>
-                                        </p>
-                                        <p>
-                                            Retail Price : <b><s> RM{{$sql->retail_price}}</s></b>
-                                        </p>
-
+                                     
                                         <p>
                                             Quantity : <b>{{$quantity}}</b>
                                         </p>
@@ -65,12 +67,9 @@
                                 :
                             </div>
                             <div class="col-md-6">
-                                <select class="form-control" name="country" id="country">
-                                  <option value="">Please Choose</option>
-                                  <option value="Malaysia">Malaysia</option>
-                                  <option value="Brunei">Brunei</option>
-                                  <option value="Singapore">Singapore</option>
-                              </select>
+                                <textarea id="address" name="address">
+                                   {{ $addressuser->address }} 
+                                </textarea>
                           </div>
                       </div>
                       <br>
@@ -105,7 +104,7 @@
         if(x === ""){
          return true;   
         }
-        if(!(x === "OFF5PC" || x === "GIVEME15")){
+        if(!(x === "20FORME")){
 
             alert("Promotion Code Is Invalid")
             return false;

@@ -3,8 +3,15 @@
 <div class="pg-opt">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h2>Step 3</h2>
+
+            </div>
+            <div class="col-md-2">
+                 <a href="{{URL::route('home')}}" class="btn btn-primary ">HOME</a>
+            </div>
+             <div class="col-md-2">
+                 <a href="{{URL::route('home')}}" class="btn btn-primary ">Staff Login</a>
             </div>
         </div>
     </div>
@@ -15,7 +22,9 @@
         <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        ORDER NUMBER : {{$sql->order_number}}
+                        <b>
+                        ORDER NUMBER : {{ $sql->order_number }}
+                    </b>
                     </div>
                 </div>
                 <br>
@@ -26,15 +35,13 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="../{{$sqlproduct->image}}">
+                                        <img alt="" src="/uploads/products/{{ $sql->picture_one }}">
                                     </div>
 
                                     <div class="col-md-6">
+                                       
                                         <p>
-                                            Brand : <b>{{$sqlbrand->name_brand}}</b>
-                                        </p>
-                                        <p>
-                                            Name : <b>{{$sql->name}}</b>
+                                            Name : {{$sql->name_on_website}}<b></b>
                                         </p>
                                        
                                     </div>
@@ -65,7 +72,7 @@
                             :
                         </div>
                         <div class="col-md-6">
-                          {{$sql->quantity}}
+                        {{$sql->quantity}} unit
                         </div>
                         
                     </div>
@@ -81,7 +88,7 @@
                             :
                         </div>
                         <div class="col-md-6">
-                          RM {{$sql->total_price}}
+                          RM{{$sql->total_price}}
                         </div>
                         
                     </div>
@@ -95,7 +102,7 @@
                             :
                         </div>
                         <div class="col-md-6">
-                          {{$sql->promotion_code}}
+                        {{$sql->vouchar_code}}
                         </div>
 
 
@@ -111,7 +118,7 @@
                             :
                         </div>
                         <div class="col-md-6">
-                         RM {{$sql->discaunt}}
+                         RM{{$sql->discaunt}}
                         </div>
 
                         
@@ -127,28 +134,14 @@
                             :
                         </div>
                         <div class="col-md-6">
-                          {{$sql->delivery_to}}
+                         {{$sql->delivery_to}}
                         </div>
 
                         
                         
                     </div>
 
-                    <div class="row">
-                      
-                        <div class="col-md-4">
-                               Shipping Fee
-                        </div>
-                        <div class="col-md-2">
-                            :
-                        </div>
-                        <div class="col-md-6">
-                          RM {{$sql->shiping_fee}}
-                        </div>
-
-                        
-                        
-                    </div>
+                  
                     <hr>
                     <div class="row">
                       
@@ -169,7 +162,8 @@
           
                 </div>
             </div>
-      
+ 
+                    
     </div>
 </div>
 </section>

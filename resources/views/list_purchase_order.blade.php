@@ -4,7 +4,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -31,6 +31,7 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
+        @if($namesessions == "kumar")
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-folder"></i>
@@ -52,29 +53,32 @@
             </div>
           </div>
         </li>
+        @endif
 
+          @if($namesessions == "angela")
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-folder"></i>
             <span>Inventory</span>
           </a>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
               <a class="collapse-item" href="{{URL::route('list_inventory')}}">Register Products</a>
 
             </div>
           </div>
+        
 
           
         </li>
 
           <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-folder"></i>
             <span>Products</span>
           </a>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
               <a class="collapse-item" href="{{URL::route('list_products')}}">List Products</a>
@@ -84,6 +88,45 @@
 
           
         </li>
+          @endif
+
+
+          @if($namesessions == "junaidah")
+           <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Report</span>
+          </a>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+              <a class="collapse-item" href="">Total Unpaid && Paid Order</a>
+
+            </div>
+
+             <div class="bg-white py-2 collapse-inner rounded">
+
+              <a class="collapse-item" href="">Cost Incurred</a>
+
+            </div>
+             <div class="bg-white py-2 collapse-inner rounded">
+
+              <a class="collapse-item" href="">Average Daily Sales</a>
+
+            </div>
+             <div class="bg-white py-2 collapse-inner rounded">
+
+              <a class="collapse-item" href="">Inventory Movement</a>
+
+            </div>
+            
+            
+          </div>
+        
+
+          
+        </li>
+        @endif
 
       </ul>
       <!-- End of Sidebar -->
@@ -121,10 +164,10 @@
 
 
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Logout
-                  </a>
+                   <a class="dropdown-item" href="{{URL::route('logout_backend')}}" >
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
                 </div>
               </li>
 
