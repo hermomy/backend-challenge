@@ -91,6 +91,7 @@
           @endif
 
 
+         
           @if($namesessions == "junaidah")
            <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
@@ -100,23 +101,23 @@
           <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="">Total Unpaid && Paid Order</a>
+              <a class="collapse-item" href="{{URL::route('report_total_unpaid_paid_orders')}}">Total Unpaid && Paid Order</a>
 
             </div>
 
              <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="">Cost Incurred</a>
+              <a class="collapse-item" href="{{URL::route('report_cost_incurred')}}">Cost Incurred</a>
 
             </div>
              <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="">Average Daily Sales</a>
+              <a class="collapse-item" href="{{URL::route('report_daily_sales')}}">Average Daily Sales</a>
 
             </div>
              <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="">Inventory Movement</a>
+              <a class="collapse-item" href="{{URL::route('report_inventory_movement')}}">Inventory Movement</a>
 
             </div>
             
@@ -127,7 +128,6 @@
           
         </li>
         @endif
-
       </ul>
       <!-- End of Sidebar -->
 
