@@ -341,5 +341,40 @@ class HermoBackendController extends Controller
       Session::flush();
       return redirect('/');
   }
+
+  public function report_daily_sales(){
+
+     $namesessions = Session::get('name');
+     $status_inventory = "Register Inventory";
+
+     
+
+     $reportdailysales = DB::table('orders as w')
+                ->select(array(DB::Raw('sum(w.grand_total) as totalgrandtotal'),DB::Raw('DATE(w.created_at) day')))
+                ->groupBy('day')
+                ->orderBy('w.created_at')
+                ->get();
+
+
+       return \View::make('master_template')
+      ->nest('content','report_daily_sales',array('reportdailysales' => $reportdailysales,'namesessions' => $namesessions));
+  }
+  public function report_cost_incurred (){
+
+     $namesessions = Session::get('name');
+     $status_inventory = "Register Inventory";
+
+     
+    $reportcostincurred = DB::table('products as w')
+                ->select(array(DB::Raw('sum(w.cost) as cost'),DB::Raw('WEEK(w.created_at) as week')))
+                ->groupBy('week')
+                ->orderBy('w.created_at')
+                ->get();
+    // $reportcostincurred = DB::select(DB::raw('SELECT created_at, SUM(cost) AS cost FROM products GROUP BY week(created_at)'));
+
+
+       return \View::make('master_template')
+      ->nest('content','report_cost_incurred',array('reportcostincurred' => $reportcostincurred,'namesessions' => $namesessions)); 
+  }
 }
 

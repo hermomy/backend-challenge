@@ -25,6 +25,9 @@ Route::post('/add_register_locationtagging','HermoBackendController@add_register
 Route::get('/list_inventory', 'HermoBackendController@list_inventory')->name('list_inventory');		
 Route::post('/add_products','HermoBackendController@add_products')->name('add_products');
 Route::get('/list_products', 'HermoBackendController@list_products')->name('list_products');	
+Route::get('/report_daily_sales','HermoBackendController@report_daily_sales')->name('report_daily_sales');
+Route::get('/report_cost_incurred','HermoBackendController@report_cost_incurred')->name('report_cost_incurred');
+
 
 Route::get('/home', 'LandingController@index')->name('home');
 Route::post('/checkout', 'LandingController@checkout')->name('checkout');

@@ -4,7 +4,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -106,12 +106,12 @@
 
              <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="{{URL::route('report_cost_incurred')}}">Cost Incurred</a>
+              <a class="collapse-item" href="">Cost Incurred</a>
 
             </div>
              <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="{{URL::route('report_daily_sales')}}">Average Daily Sales</a>
+              <a class="collapse-item" href="">Average Daily Sales</a>
 
             </div>
              <div class="bg-white py-2 collapse-inner rounded">
@@ -129,7 +129,6 @@
         @endif
 
       </ul>
-      <!-- End of Sidebar -->
 
       <!-- Content Wrapper -->
       <div id="content-wrapper" class="d-flex flex-column">
@@ -174,38 +173,77 @@
             </ul>
 
 
-        </nav>
-        <!-- End of Topbar -->
+          </nav>
+          <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <h1 class="h3 mb-0 text-gray-800">Report Daily Sales</h1>
+
+            </div>
+            
+          
+            <div class="card shadow mb-4">
+
+
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Total (RM)</th>
+                        
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Date</th>
+                        <th>Total (RM)</th>
+                        
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                     @foreach($reportdailysales as $val)
+                     <tr>
+                      <td>{{ date('d-m-Y', strtotime($val->day)) }}</td>
+                      <td>{{ $val->totalgrandtotal }}</td>
+                      
+                    </td>
+
+                  </tr>
+                  @endforeach
+
+                </tbody>
+              </table>
+            </div>
           </div>
 
 
-          
 
         </div>
-        <!-- /.container-fluid -->
+
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Hermo Test Exam</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+      <!-- /.container-fluid -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Main Content -->
 
-  </div>  
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Hermo Test Exam</span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+</div>  
