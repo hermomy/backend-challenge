@@ -376,5 +376,49 @@ class HermoBackendController extends Controller
        return \View::make('master_template')
       ->nest('content','report_cost_incurred',array('reportcostincurred' => $reportcostincurred,'namesessions' => $namesessions)); 
   }
+
+
+  public function report_total_unpaid_paid_orders(){
+
+     $namesessions = Session::get('name');
+     $status_paid = "paid";
+     $status_unpaid = "unpaid";
+
+     
+    $reportpaid = DB::table('purchaseorders as w')
+                ->select(array(DB::Raw('sum(w.cost) as cost')))
+                ->where('status_fufilment','=',$status_paid)
+                ->get();
+
+
+
+    $reportunpaid = DB::table('purchaseorders as w')
+                ->select(array(DB::Raw('sum(w.cost) as cost')))
+                ->where('status_fufilment','=',$status_unpaid)
+                ->get();
+    // $reportcostincurred = DB::select(DB::raw('SELECT created_at, SUM(cost) AS cost FROM products GROUP BY week(created_at)'));
+
+
+       return \View::make('master_template')
+      ->nest('content','report_total_unpaid_paid_orders',array('reportpaidunpaid' => $reportpaid,'reportunpaid'=>$reportunpaid,'namesessions' => $namesessions)); 
+
+  }
+
+
+  public function report_inventory_movement(){
+
+     $namesessions = Session::get('name');
+    
+
+     
+    $reportinventorymovement = DB::table('inventory as w')
+                ->select(array(DB::Raw('sum(w.inventory_received) as inventory_received'),DB::Raw('sum(w.inventory_shipped) as inventory_shipped'),DB::Raw('sum(w.inventory_on_hand) as inventory_on_hand'),'stock_items.name'))
+                ->join('stock_items','stock_items.id', '=', 'w.stock_items_id')
+                ->groupBy('w.stock_items_id','stock_items.name')
+                ->get();
+
+       return \View::make('master_template')
+      ->nest('content','report_inventory_movement',array('reportinventorymovement' => $reportinventorymovement,'namesessions' => $namesessions)); 
+  }
 }
 

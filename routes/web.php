@@ -27,8 +27,8 @@ Route::post('/add_products','HermoBackendController@add_products')->name('add_pr
 Route::get('/list_products', 'HermoBackendController@list_products')->name('list_products');	
 Route::get('/report_daily_sales','HermoBackendController@report_daily_sales')->name('report_daily_sales');
 Route::get('/report_cost_incurred','HermoBackendController@report_cost_incurred')->name('report_cost_incurred');
-
-
+Route::get('/report_total_unpaid_paid_orders','HermoBackendController@report_total_unpaid_paid_orders')->name('report_total_unpaid_paid_orders');
+Route::get('/report_inventory_movement','HermoBackendController@report_inventory_movement')->name('report_inventory_movement');
 Route::get('/home', 'LandingController@index')->name('home');
 Route::post('/checkout', 'LandingController@checkout')->name('checkout');
 Route::post('/checkout_process', 'LandingController@checkout_process')->name('checkout_process');
