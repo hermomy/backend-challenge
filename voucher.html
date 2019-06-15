@@ -21,15 +21,9 @@
 			var T = parseFloat(document.getElementById("total").value);
 			var t1 = parseFloat(subT)+parseFloat(shipF);
 			
-			if(code=="20FORME"){
-				if(dd != 31 && mm+1 == ex_mm && yyyy == ex_yy){
-					if(subT >= min_purchase){
-						T = t1 - (t1*discount);
-						document.getElementById("total").value = T.toFixed(2)
-					}
-					else{document.getElementById("total").value = t1.toFixed(2)}
-				}
-				else{document.getElementById("total").value = t1.toFixed(2)}
+			if(code=="20FORME" && dd != 31 && mm+1 == ex_mm && yyyy == ex_yy && subT >= min_purchase){
+				T = t1 - (t1*discount);
+				document.getElementById("total").value = T.toFixed(2)
 			}
 			else{document.getElementById("total").value = t1.toFixed(2)}
 		}
