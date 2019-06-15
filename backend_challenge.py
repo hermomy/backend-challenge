@@ -119,18 +119,34 @@ for i in range(len(month_sale)):
 
 print("The inventory movement based on Paid Orders and Unpaid Orders")
 
-tot_month=[]
+tot_need=[]
 paid=[]
 unpaid=[]
 for i in range(1,13):
-    tot_month.append(df_1.loc[(df_1['month'] == i), 'product'].sum())
+    tot_need.append(df_1.loc[(df_1['month'] == i), 'product'].sum())
     paid.append(df_1.loc[(df_1['month'] == i) & (df_1['order_status'] == 1), 'product'].sum())
     unpaid.append(df_1.loc[(df_1['month'] == i) & (df_1['order_status'] == 0), 'product'].sum())
+    
 
-for n,i in enumerate(tot_month):
-    if(n<11):
-        tot_month[n+1]=tot_month[n]-paid[n]+tot_month[n+1]
-        
-for i in range(0,12):
-    print("Month: ", i+1, " Paid Order: ", paid[i], " Unpaid Order: ", unpaid[i]," Inventory In: ", paid[i]+unpaid[i]," Inventory: ", tot_month[i], " Inventory Out: ", paid[i], " Remain: ", tot_month[i]-paid[i] )
-      
+d_2={"total_need":tot_need,"Paid_product":paid,"Unpaid_product":unpaid}
+df_2=pd.DataFrame(data=d_2)
+
+in_inventory=[0,0,0,0,0,0,0,0,0,0,0,0]
+out_inventory=[0,0,0,0,0,0,0,0,0,0,0,0]
+remain_last=[0,0,0,0,0,0,0,0,0,0,0,0]
+tot_inventory=[0,0,0,0,0,0,0,0,0,0,0,0]
+df_2["Remain_last"]=remain_last
+df_2["in"]=in_inventory
+df_2["out"]=out_inventory
+df_2["Total_inventory"]=tot_inventory
+
+for i,row in df_2.iterrows():
+    row["Remain_last"]=df_2.iloc[i-1]["Total_inventory"]
+    if(row["total_need"]<=row["Remain_last"]):
+        row["in"]=0
+    else:
+        row["in"]=row["total_need"]-row["Remain_last"]
+    row["out"]=row["Paid_product"]
+    row["Total_inventory"]=row["Remain_last"]+row["in"]-row["out"]
+    
+df_2
