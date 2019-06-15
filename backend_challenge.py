@@ -24,15 +24,9 @@ def voucher20(code, voucher, subtotal,shipping, date):
     yy=int(yy)
     total_amount=0
     t1=subtotal+shipping
-    if (code == voucher['code']):
-        if (dd != 31 and mm+1 == voucher['expired_m'] and yy == voucher['expired_y']):
-            if (subtotal >= voucher['min_purchase']):
-                total_amount=t1-(t1*voucher['discount'])
-                return total_amount
-            else:
-                return t1
-        else:
-            return t1
+    if (code == voucher['code'] and dd != 31 and mm+1 == voucher['expired_m'] and yy == voucher['expired_y'] and subtotal >= voucher['min_purchase']):
+        total_amount=t1-(t1*voucher['discount'])
+        return total_amount
     else:
         return t1
     
@@ -125,28 +119,18 @@ for i in range(len(month_sale)):
 
 print("The inventory movement based on Paid Orders and Unpaid Orders")
 
-total_inventory = 300
-
-print("total inventory: ", total_inventory)
-
-total_product_sold = df_1['product'].sum()
-
-print("total product sold: ", total_product_sold)
-
-total_product_sold_paid = df_1.loc[(df_1['order_status'] == 1), 'product'].sum()
-total_product_sold_unpaid = df_1.loc[(df_1['order_status'] == 0), 'product'].sum()
-
-inventory_paid=total_inventory-total_product_sold_paid
-inventory_unpaid=total_inventory-total_product_sold_unpaid
-
-print("inventory after paid orders: ", inventory_paid)
-print("inventory after unpaid orders: ", inventory_unpaid)
-
-
-remain_inventory = total_inventory-total_product_sold
-
-print("Remaining inventory: ", remain_inventory)
-
+tot_month=[]
+paid=[]
+unpaid=[]
 for i in range(1,13):
-    total_inventory=total_inventory-(df_1.loc[(df_1['month'] == i), 'product'].sum())
-    print("month: ", i, "inventory: ", total_inventory)
+    tot_month.append(df_1.loc[(df_1['month'] == i), 'product'].sum())
+    paid.append(df_1.loc[(df_1['month'] == i) & (df_1['order_status'] == 1), 'product'].sum())
+    unpaid.append(df_1.loc[(df_1['month'] == i) & (df_1['order_status'] == 0), 'product'].sum())
+
+for n,i in enumerate(tot_month):
+    if(n<11):
+        tot_month[n+1]=tot_month[n]-paid[n]+tot_month[n+1]
+        
+for i in range(0,12):
+    print("Month: ", i+1, " Paid Order: ", paid[i], " Unpaid Order: ", unpaid[i]," Inventory In: ", paid[i]+unpaid[i]," Inventory: ", tot_month[i], " Inventory Out: ", paid[i], " Remain: ", tot_month[i]-paid[i] )
+      
